@@ -77,7 +77,13 @@ function getItemsByCategory(items, category) {
  * @returns {number} the total quantity of all items
  */
 function countItems(items) {
-  // TODO: use `reduce`
+  // let totalItems = 0;
+  // for(let i=0; i < items.length; i++ ) {
+  //     totalItems += items[i].quantity;
+  // };
+  // return totalItems;
+  const totalItems = items.reduce( (accumulator, currentItems) => accumulator + currentItems.quantity, 0);
+  return totalItems;
 }
 
 /**
@@ -85,7 +91,13 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */
 function calculateTotalPrice(items) {
-  // TODO: use `reduce`
+  // let totalCost = 0;
+  // for(let i=0; i < items.length; i++ ) {
+  //     totalCost += (items[i].price * items[i].quantity)
+  // };
+  // return totalCost;
+  const totalCost = items.reduce( (accumulator, itemPrice) => accumulator + itemPrice.price * itemPrice.quantity, 0)
+  return totalCost;
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
